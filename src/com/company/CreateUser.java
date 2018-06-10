@@ -19,55 +19,14 @@ public class CreateUser {
     }
 
     private User.Surname getRandomSurname() {
-        User.Surname result;
         Random random = new Random();
-        if (random.nextInt(6) == 0) {
-            result =  User.Surname.Ivanov;
-
-        }
-        if (random.nextInt(6) == 1) {
-            result = User.Surname.Sidorov;
-        }
-
-        if (random.nextInt(6) == 2) {
-            result = User.Surname.Putin;
-        }
-        if (random.nextInt(6) == 3) {
-            result = User.Surname.Coy;
-        }
-
-        if (random.nextInt(6) == 4) {
-            result = User.Surname.Dorn;
-        }
-        if (random.nextInt(6) == 5) {
-            result = User.Surname.Evremof;
-        }
-        return result;
+        this.User.Surname = User.Surname.values()[random.nextInt(User.Surname.values().length)];
+        return this.User.Surname;
     }
 
     private User.Name getRandomName() {
-        User.Name result;
         Random random = new Random();
-        if (random.nextInt(6) == 0) {
-            result = User.Name.Lesha;
-        }
-        if (random.nextInt(6) == 1) {
-            result = User.Name.Sasha;
-        }
-
-        if (random.nextInt(6) == 2) {
-            result = User.Name.Anton;
-        }
-        if (random.nextInt(6) == 3) {
-            result = User.Name.Zheka;
-        }
-
-        if (random.nextInt(6) == 4) {
-            result = User.Name.Nikita;
-        }
-        if (random.nextInt(6) == 5) {
-            result = User.Name.Igor;
-        }
-        return result;
+        this.User.Name = User.Surname.values()[random.nextInt(User.Name.values().length)];
+        return this.User.Surname;
     }
 }

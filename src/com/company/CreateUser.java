@@ -19,50 +19,55 @@ public class CreateUser {
     }
 
     private User.Surname getRandomSurname() {
+        User.Surname result;
         Random random = new Random();
         if (random.nextInt(6) == 0) {
-            return User.Surname.Ivanov;
+            result =  User.Surname.Ivanov;
+
         }
         if (random.nextInt(6) == 1) {
-            return User.Surname.Sidorov;
+            result = User.Surname.Sidorov;
         }
 
         if (random.nextInt(6) == 2) {
-            return User.Surname.Putin;
+            result = User.Surname.Putin;
         }
         if (random.nextInt(6) == 3) {
-            return User.Surname.Coy;
+            result = User.Surname.Coy;
         }
 
         if (random.nextInt(6) == 4) {
-            return User.Surname.Dorn;
+            result = User.Surname.Dorn;
         }
         if (random.nextInt(6) == 5) {
-            return User.Surname.Evremof;
+            result = User.Surname.Evremof;
         }
+        return result;
     }
 
     private User.Name getRandomName() {
+        User.Name result;
         Random random = new Random();
         if (random.nextInt(6) == 0) {
-            return User.Name.Lesha;
+            result = User.Name.Lesha;
         }
         if (random.nextInt(6) == 1) {
-            return User.Name.Sasha;
+            result = User.Name.Sasha;
         }
 
         if (random.nextInt(6) == 2) {
-            return User.Name.Anton;
+            result = User.Name.Anton;
         }
         if (random.nextInt(6) == 3) {
-            return User.Name.Zheka;
+            result = User.Name.Zheka;
         }
 
         if (random.nextInt(6) == 4) {
-            return User.Name.Nikita;
+            result = User.Name.Nikita;
         }
         if (random.nextInt(6) == 5) {
-            return User.Name.Igor;
+            result = User.Name.Igor;
         }
+        return result;
     }
 }

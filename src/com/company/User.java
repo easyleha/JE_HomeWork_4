@@ -1,21 +1,22 @@
 package com.company;
 
+import java.util.ArrayList;
+
+import java.util.List;
 import java.util.Random;
 
 public class User implements Comparable<User> {
 
-    private Name name;
-    private Surname surname;
-    private int age;
+    protected Name name;
+    protected Surname surname;
+    protected int age;
+    List<User> userList = new ArrayList<>();
 
-    public User(int age) {
-        this.age = age;
-    }
 
 
     public User(Name name, Surname surname, int age) {
-        this.name = name;
         this.surname = surname;
+        this.name = name;
         this.age = age;
 
     }
@@ -57,6 +58,6 @@ public class User implements Comparable<User> {
                 surname +
                 " " + name +
                 ", " + age +
-                '}';
+                "}\n";
     }
 }

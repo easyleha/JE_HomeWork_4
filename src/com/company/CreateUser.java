@@ -19,6 +19,8 @@ public class CreateUser {
             Name name = getRandomName();
             userList.add(new User(name, surname, random.nextInt(20) + 20));
         }
+        Collections.sort(userList);
+        System.out.println("userList: " + userList);
 
     }
 
@@ -35,9 +37,5 @@ public class CreateUser {
         return name;
     }
 
-    public void userList() {
-        Collections.sort(userList);
-        System.out.println("userList: " + userList);
-    }
 
 }

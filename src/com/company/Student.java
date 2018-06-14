@@ -1,10 +1,13 @@
 package com.company;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Random;
 
 public class Student extends User {
 
-    private enum Group{
+    public enum Group{
         JAVA(0), CPP(1), PYTHON(2), QA(3), DESIGN(4), FRONTEND(5);
 
         int value;
@@ -14,13 +17,25 @@ public class Student extends User {
     }
 
 
-    private Group group;
+    List<User> studentList = new ArrayList<>();
+    public Group group;
     private static Random random = new Random();
 
 
-    public Student() {
+    public Student(Name name, Surname surname, int age) {
+        super(name, surname, age);
         new CreateUser();
         this.group = Group.values()[random.nextInt(Group.values().length)];
+    }
+
+    public void createStudentList() {
+        Random random = new Random();
+        for (int i = 0; i <= 100; i++) {
+            userList.add(new Student(name, surname, random.nextInt(20) + 20));
+        }
+        Collections.sort(studentList);
+        System.out.println("studentList: " + studentList);
+
     }
 
     @Override

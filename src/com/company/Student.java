@@ -7,14 +7,6 @@ import java.util.Random;
 
 public class Student extends User {
 
-    public enum Group{
-        JAVA(0), CPP(1), PYTHON(2), QA(3), DESIGN(4), FRONTEND(5);
-
-        int value;
-        Group(int value) {
-            this.value = value;
-        }
-    }
 
 
     List<User> studentList = new ArrayList<>();
@@ -31,7 +23,7 @@ public class Student extends User {
     public void createStudentList() {
         Random random = new Random();
         for (int i = 0; i <= 100; i++) {
-            userList.add(new Student(name, surname, random.nextInt(20) + 20));
+            studentList.add(new Student(name, surname, random.nextInt(20) + 20));
         }
         Collections.sort(studentList);
         System.out.println("studentList: " + studentList);

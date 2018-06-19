@@ -23,7 +23,9 @@ public class Student extends User {
     public void createStudentList() {
         Random random = new Random();
         for (int i = 0; i <= 100; i++) {
-            studentList.add(new Student(name, surname, random.nextInt(20) + 20));
+            studentList.add(new Student(Name.values()[random.nextInt(Name.values().length)],
+                    Surname.values()[random.nextInt(Surname.values().length)],
+                    random.nextInt(20) + 20));
         }
         Collections.sort(studentList);
         System.out.println("studentList: " + studentList);

@@ -1,15 +1,12 @@
 package com.company;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+
 import java.util.Random;
+
 
 public class Student extends User {
 
 
-
-    List<User> studentList = new ArrayList<>();
     public Group group;
     private static Random random = new Random();
 
@@ -20,24 +17,13 @@ public class Student extends User {
         this.group = Group.values()[random.nextInt(Group.values().length)];
     }
 
-    public void createStudentList() {
-        Random random = new Random();
-        for (int i = 0; i <= 100; i++) {
-            studentList.add(new Student(Name.values()[random.nextInt(Name.values().length)],
-                    Surname.values()[random.nextInt(Surname.values().length)],
-                    random.nextInt(20) + 20));
-        }
-        Collections.sort(studentList);
-        System.out.println("studentList: " + studentList);
-
-    }
 
     @Override
     public int compareTo(User user) {
         int result = 0;
-        if(user instanceof Student) {
+        if (user instanceof Student) {
             result = Integer.compare(group.value, ((Student) user).group.value);
-            if(result == 0) {
+            if (result == 0) {
                 result = super.compareTo(user);
             }
         }
